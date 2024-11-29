@@ -8,7 +8,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "npx nodemon index.js"
+    "dev:server": "npx nodemon index.js",
+    "dev:client": "BROWSER=none npm run start --prefix client",
+    "dev": "concurrently -c green,cyan \"npm:dev:*\""
   },
   "keywords": [],
   "author": "",
@@ -22,6 +24,7 @@
     "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.5.9"
+    "@flydotio/dockerfile": "^0.5.9",
+    "concurrently": "^9.1.0"
   }
 }

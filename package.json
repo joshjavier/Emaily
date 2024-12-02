@@ -21,7 +21,8 @@
     "express": "^5.0.1",
     "mongoose": "^8.8.3",
     "passport": "^0.5.3",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "stripe": "^17.4.0"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.9",

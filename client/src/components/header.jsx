@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { Link } from "react-router-dom"
+import Payments from "./payments"
 
 const Header = () => {
   const auth = useSelector(state => state.auth)
@@ -11,7 +12,12 @@ const Header = () => {
       case false:
         return <li><a href="/auth/google">Log in with Google</a></li>
       default:
-        return <li><a href="/api/logout">Log out</a></li>
+        return (
+          <>
+            <li><Payments /></li>
+            <li><a href="/api/logout">Log out</a></li>
+          </>
+        )
     }
   }
 

@@ -1,0 +1,11 @@
+services:
+  dev:
+    image: node:23.3.0-slim
+    ports:
+      - 3000:3000
+      - 5001:5000
+    stop_grace_period: 3s
+    tty: true
+    volumes:
+      - ./:/home/node/app/
+    working_dir: /home/node/app

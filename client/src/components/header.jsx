@@ -15,6 +15,7 @@ const Header = () => {
         return (
           <>
             <li><Payments /></li>
+            <li style={{ marginInline: 10 }}>Credits: {auth.credits}</li>
             <li><a href="/api/logout">Log out</a></li>
           </>
         )

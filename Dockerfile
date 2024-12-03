@@ -24,8 +24,18 @@ RUN apt-get update -qq && \
 COPY package-lock.json package.json ./
 RUN npm ci
 
+# Install build dependencies
+COPY client/package-lock.json client/package.json ./client/
+RUN npm ci --prefix client
+
 # Copy application code
 COPY . .
+
+# Build client bundle
+RUN npm run build --prefix client
+
+# Remove build dependencies
+RUN rm -rf client/node_modules
 
 
 # Final stage for app image

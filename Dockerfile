@@ -26,7 +26,7 @@ RUN npm ci
 
 # Install build dependencies
 COPY client/package-lock.json client/package.json ./client/
-RUN npm ci --prefix client
+RUN npm ci --prefix client --legacy-peer-deps
 
 # Copy application code
 COPY . .
